@@ -6,6 +6,12 @@ public class Deaths {
     private int year;
     private String tuberculosis;
 
+    public Deaths(String entity, int year, String tuberculosis){
+        entity = this.entity;
+        year = this.year;
+        tuberculosis = this.tuberculosis;
+    }
+
     public String getEntity(){
         return entity;
     }
@@ -16,12 +22,6 @@ public class Deaths {
 
     public String getTuberculosis(){
         return tuberculosis;
-    }
-
-    public Deaths(String entity, int year, String tuberculosis){
-        entity = this.entity;
-        year = this.year;
-        tuberculosis = this.tuberculosis;
     }
 
     public String toString(){
