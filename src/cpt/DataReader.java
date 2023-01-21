@@ -25,20 +25,51 @@ public class DataReader {
         meningitis = this.meningitis;
     }
 
+    /**
+     * Getter method for country
+     * @return country
+     */
     public String getCountry(){
         return country;
     }
 
+    /**
+     * Getter method for year
+     * @return year
+     */
     public int getYear(){
         return year;
     }
 
-    public String getTuberculosis(){
+    /**
+     * Getter method for tuberculosis
+     * @return tuberculosis deaths
+     */
+    public int getTuberculosis(){
         return tuberculosis;
     }
 
-    public String toString(){
-        return country + " " + year + " " + tuberculosis;
+    /**
+     * Getter method for whooping cough
+     * @return whooping cough deaths
+     */
+    public int getWhoopingCough(){
+        return whoopingCough;
     }
-    
+
+    /**
+     * Getter method for meningitis
+     * @return meningitis deaths
+     */
+    public int getMeningitis(){
+        return meningitis;
+    }
+
+    /**
+    * String representation of a set of data 
+    * @return all the attributes related to one set of data 
+    */
+    public String toString(){
+        return country + ", " + year + ", " + tuberculosis + ", " + whoopingCough + ", " + meningitis;
+    }
 }
