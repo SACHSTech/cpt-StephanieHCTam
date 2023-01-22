@@ -1,4 +1,5 @@
 package cpt;
+
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.*;
@@ -7,6 +8,66 @@ import java.util.*;
 
 public class DataInteraction {
 
+    private static ArrayList<DataReader> countryList = new ArrayList<DataReader>();
+
+    public void main(String[] args) throws IOException{
+
+       // DataInteraction DataInteraction = new DataInteraction();
+
+        ArrayList <DataReader> countryList = new ArrayList <DataReader>();
+
+        for(int i = 0; i<countryList.size();i++){
+            System.out.println(countryList.get(i).getCountry());
+            System.out.println(countryList.get(i).getYear());
+            System.out.println(countryList.get(i).getTuberculosis());
+            System.out.println(countryList.get(i).getWhoopingCough());
+            System.out.println(countryList.get(i).getMeningitis());
+        }
+    }
+    
+    public DataInteraction() throws IOException{
+        BufferedReader key = new BufferedReader(new FileReader("Vaccine-preventable-diseases-deaths"));
+        String str = key.readLine();
+
+        while(str != null){
+            String[] holder = str.split(",");
+            DataReader country = new DataReader(holder[0], Integer.parseInt(holder[1]), Integer.parseInt(holder[2]), Integer.parseInt(holder[3]), Integer.parseInt(holder[4]));
+            countryList.add(country);
+            str = key.readLine();
+        }
+        key.close();
+    }
+
+    public ArrayList<String> countryName(){
+        
+        ArrayList <String> customList = new ArrayList <String>();
+
+        for(int i = 0; i < countryList.size();i++) customList.add(countryList.get(i).getCountry());
+        
+        return customList;
+
+    }
+
+    public ArrayList<DataReader> yearNum(int year){
+
+        ArrayList <DataReader> customList = new ArrayList <DataReader>();
+
+        for(int i = 0; i < countryList.size();i++){
+            if(countryList.get(i).getYear() == year) customList.add(countryList.get(i));
+        }
+        
+        return customList;
+    }
+
+    public ArrayList<DataReader> getList(){
+        return countryList;
+    }
+
+
+    
+
+    ///////////////////////////////////////////////////
+
     /**
      * Search data set for country choice
      * @param array - the datareader array 
@@ -14,6 +75,7 @@ public class DataInteraction {
      * @return the array list that contains the country  
      */
 
+     /* 
      public ArrayList<DataReader> countrySearch(DataReader[] array, String country){
         String countryElement;
 
@@ -34,12 +96,16 @@ public class DataInteraction {
         return tempCountry; 
     }
 
+    */
+
     /**
     * Searchs the data set for year choice
     * @param array - the datareader array 
     * @param year - the name of the year
     * @return the array list that contains the year    
     */
+
+    /* 
     public ArrayList<DataReader> yearSearch(DataReader[] array, int year){
         int yearElement;
 
@@ -60,39 +126,8 @@ public class DataInteraction {
         return tempYear; 
     }
 
-    ///////////////////////////////////////////////////
-
-    /* 
-    private static ArrayList<DataReader> countrySearch = new ArrayList<DataReader>();
-
-    public void main(String[] args) throws IOException{
-
-        ArrayList <DataReader> countrySearch = new ArrayList <DataReader>();
-
-        for(int i = 0; i<countrySearch.size();i++){
-            System.out.println(countrySearch.get(i).getCountry());
-            System.out.println(countrySearch.get(i).getYear());
-            System.out.println(countrySearch.get(i).getTuberculosis());
-            System.out.println(countrySearch.get(i).getWhoopingCough());
-            System.out.println(countrySearch.get(i).getMeningitis());
-        }
-
-    }
-    
-    public DataInteraction() throws IOException{
-        BufferedReader key = new BufferedReader(new FileReader("Vaccine-preventable-diseases-deaths"));
-        String str = key.readLine();
-
-        while(str != null){
-            String[] holder = str.split(",");
-            DataReader country = new DataReader(holder[0], Integer.parseInt(holder[1]), Integer.parseInt(holder[2]), Integer.parseInt(holder[3]), Integer.parseInt(holder[4]));
-            countrySearch.add(country);
-            str = key.readLine();
-        }
-        key.close();
-    }
-
     */
+
 
 }
 
