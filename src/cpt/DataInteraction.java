@@ -7,8 +7,6 @@ import java.util.*;
 
 public class DataInteraction {
 
-    // The methods below search the data set  
-
     /**
      * Search data set for country choice
      * @param array - the datareader array 
@@ -16,13 +14,13 @@ public class DataInteraction {
      * @return the array list that contains the country  
      */
 
-    public static ArrayList<DataReader> countrySearch(DataReader[] array, String country){
+     public static ArrayList<DataReader> countrySearch(DataReader[] array, String country){
         String countryElement;
 
         // Array list that holds all the data entries with the country choice
         ArrayList<DataReader> temporary = new ArrayList<DataReader>(); 
 
-        // Check if the province in the array element is country of choice
+        // Check if the country in the array element is country of choice
         for(int i = 0; i < array.length; i++){
             countryElement = array[i].getCountry();	
             
@@ -36,36 +34,62 @@ public class DataInteraction {
         return temporary; 
     }
 
+    /**
+    * Searchs the data set for year choice
+    * @param array - the datareader array 
+    * @param year - the name of the year
+    * @return the array list that contains the year    
+    */
+    public static ArrayList<DataReader> yearSearch(DataReader[] array, int year){
+        int yearElement;
 
+        // Array list that holds all the data entries with the year choice
+        ArrayList<DataReader> temporary = new ArrayList<DataReader>();
 
+        // Check if the labour type in the array element is labour type of choice
+        for (int i = 0; i < array.length; i++) {
+            yearElement = array[i].getYear();				
+            
+            // Add to array list 
+            if (yearElement == year) {
+                temporary.add(array[i]);
+            }
+        }
+    
+        // Return array list 
+        return temporary; 
+    }
 
+    ///////////////////////////////////////////////////
 
-    /*
-
-    static ArrayList<DataReader> death = new ArrayList<DataReader>();
+        /* 
+    private static ArrayList<DataReader> countrySearch = new ArrayList<DataReader>();
 
     public void main(String[] args) throws IOException{
-    
-        //DataCollection DataCollection = new DataCollection();
-         
-        for(int i = 0; i<death.size();i++){
-            System.out.println(tuberculosis.get(i).getEntity());
-            System.out.println(tuberculosis.get(i).getYear());
-            System.out.println(tuberculosis.get(i).getTuberculosis());
+
+        ArrayList <DataReader> countrySearch = new ArrayList <DataReader>();
+
+        for(int i = 0; i<countrySearch.size();i++){
+            System.out.println(countrySearch.get(i).getCountry());
+            System.out.println(countrySearch.get(i).getYear());
+            System.out.println(countrySearch.get(i).getTuberculosis());
+            System.out.println(countrySearch.get(i).getWhoopingCough());
+            System.out.println(countrySearch.get(i).getMeningitis());
         }
+
     }
     
     public DataInteraction() throws IOException{
-        BufferedReader Br = new BufferedReader(new FileReader("Deaths-caused-by-Tuberculosis"));
-        String str = Br.readLine();
+        BufferedReader key = new BufferedReader(new FileReader("Vaccine-preventable-diseases-deaths"));
+        String str = key.readLine();
 
         while(str != null){
             String[] holder = str.split(",");
-            DataReader data = new DataReader(holder[0], Integer.parseInt(holder[1]), holder[2]);
-            tuberculosis.add(data);
-            str = Br.readLine();
+            DataReader country = new DataReader(holder[0], Integer.parseInt(holder[1]), Integer.parseInt(holder[2]), Integer.parseInt(holder[3]), Integer.parseInt(holder[4]));
+            countrySearch.add(country);
+            str = key.readLine();
         }
-        Br.close();
+        key.close();
     }
 
     */
