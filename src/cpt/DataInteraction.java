@@ -38,15 +38,40 @@ public class DataInteraction {
         key.close();
     }
 
-    public ArrayList<String> countryName(){
-        
-        ArrayList <String> customList = new ArrayList <String>();
 
-        for(int i = 0; i < dataList.size();i++) customList.add(dataList.get(i).getCountry());
+    // take country list, compare dataList 
+    // create a method that compares everything single object in dataList in that object, if the same create other 
+
+    // method take in country name, do: compare the orig dataList, loop: if the dataList at i the name of country then add it to different array, define it to that array
+
+
+    public ArrayList<DataReader> countryName(String country){
+
+        ArrayList <DataReader> newList = new ArrayList <DataReader>();
+
+        for(int i = 0; i < dataList.size();i++){
+            if(dataList.get(i).getCountry().equals(country)) newList.add(dataList.get(i));
+        }
         
-        return customList;
+        return newList;
+    }
+
+    public ArrayList<DataReader> yearNum(int year){
+        
+        ArrayList <DataReader> newList = new ArrayList <DataReader>();
+
+        for(int i = 0; i < dataList.size();i++){
+            if(dataList.get(i).getYear() == year) newList.add(dataList.get(i));
+        
+        return newList;
 
     }
+
+
+
+    /* 
+
+    
 
     public ArrayList<DataReader> yearNum(int year){
 
@@ -59,9 +84,21 @@ public class DataInteraction {
         return customList;
     }
 
+    public ArrayList<String> countryName(){
+        
+        ArrayList <String> customList = new ArrayList <String>();
+
+        for(int i = 0; i < dataList.size();i++) customList.add(dataList.get(i).getCountry());
+        
+        return customList;
+
+    }
+
     public ArrayList<DataReader> getList(){
         return dataList;
     }
+
+    */
 
 
     
