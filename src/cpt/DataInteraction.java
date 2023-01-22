@@ -14,11 +14,11 @@ public class DataInteraction {
      * @return the array list that contains the country  
      */
 
-     public static ArrayList<DataReader> countrySearch(DataReader[] array, String country){
+     public ArrayList<DataReader> countrySearch(DataReader[] array, String country){
         String countryElement;
 
         // Array list that holds all the data entries with the country choice
-        ArrayList<DataReader> temporary = new ArrayList<DataReader>(); 
+        ArrayList<DataReader> tempCountry = new ArrayList<DataReader>(); 
 
         // Check if the country in the array element is country of choice
         for(int i = 0; i < array.length; i++){
@@ -26,12 +26,12 @@ public class DataInteraction {
             
             // Add to array list 
             if(countryElement.equals(country)){
-                temporary.add(array[i]);
+                tempCountry.add(array[i]);
             }
         }
         
         // Return array list 
-        return temporary; 
+        return tempCountry; 
     }
 
     /**
@@ -40,11 +40,11 @@ public class DataInteraction {
     * @param year - the name of the year
     * @return the array list that contains the year    
     */
-    public static ArrayList<DataReader> yearSearch(DataReader[] array, int year){
+    public ArrayList<DataReader> yearSearch(DataReader[] array, int year){
         int yearElement;
 
         // Array list that holds all the data entries with the year choice
-        ArrayList<DataReader> temporary = new ArrayList<DataReader>();
+        ArrayList<DataReader> tempYear = new ArrayList<DataReader>();
 
         // Check if the labour type in the array element is labour type of choice
         for (int i = 0; i < array.length; i++) {
@@ -52,17 +52,17 @@ public class DataInteraction {
             
             // Add to array list 
             if (yearElement == year) {
-                temporary.add(array[i]);
+                tempYear.add(array[i]);
             }
         }
     
         // Return array list 
-        return temporary; 
+        return tempYear; 
     }
 
     ///////////////////////////////////////////////////
 
-        /* 
+    /* 
     private static ArrayList<DataReader> countrySearch = new ArrayList<DataReader>();
 
     public void main(String[] args) throws IOException{
