@@ -49,7 +49,7 @@ public class DataInteraction {
 
         ArrayList <DataReader> newList = new ArrayList <DataReader>();
 
-        for(int i = 0; i < dataList.size();i++){
+        for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals(country)) newList.add(dataList.get(i));
         }
         
@@ -60,9 +60,10 @@ public class DataInteraction {
         
         ArrayList <DataReader> newList = new ArrayList <DataReader>();
 
-        for(int i = 0; i < dataList.size();i++){
+        for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getYear() == year) newList.add(dataList.get(i));
-        
+        }
+
         return newList;
 
     }
