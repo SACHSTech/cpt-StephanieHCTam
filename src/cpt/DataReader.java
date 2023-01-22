@@ -11,18 +11,19 @@ public class DataReader {
 
     /**
      * Constructor - creates a new data instance
-     * @param country - country name
-     * @param year - chosen year
-     * @param tuberculosis - deaths by tuberculosis
-     * @param whoopingCough - deaths by whooping cough
-     * @param meningitis - deaths by meningitis
+     * @param hicountry - country name
+     * @param hiyear - chosen year
+     * @param hituberculosis - deaths by tuberculosis
+     * @param hiwhoopingCough - deaths by whooping cough
+     * @param himeningitis - deaths by meningitis
      */
-    public DataReader(String country, int year, int tuberculosis, int whoopingCough, int meningitis){
-        country = this.country;
-        year = this.year;
-        tuberculosis = this.tuberculosis;
-        whoopingCough = this.whoopingCough;
-        meningitis = this.meningitis;
+
+    public DataReader(String hicountry, int hiyear, int hituberculosis, int hiwhoopingCough, int himeningitis){
+        this.country = hicountry;
+        this.year = hiyear;
+        this.tuberculosis = hituberculosis;
+        this.whoopingCough = hiwhoopingCough;
+        this.meningitis = himeningitis;
     }
 
     /**
@@ -55,7 +56,7 @@ public class DataReader {
      */
     public int getWhoopingCough(){
         return whoopingCough;
-    }
+    }           
 
     /**
      * Getter method for meningitis
