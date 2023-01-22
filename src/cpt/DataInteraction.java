@@ -1,11 +1,11 @@
 package cpt;
-
+ 
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.*;
 import java.io.IOException;
 import java.util.*;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
@@ -71,105 +71,6 @@ public class DataInteraction {
         return newList;
 
     }
-
-
-
-    /* 
-
-    
-
-    public ArrayList<DataReader> yearNum(int year){
-
-        ArrayList <DataReader> customList = new ArrayList <DataReader>();
-
-        for(int i = 0; i < dataList.size();i++){
-            if(dataList.get(i).getYear() == year) customList.add(dataList.get(i));
-        }
-        
-        return customList;
-    }
-
-    public ArrayList<String> countryName(){
-        
-        ArrayList <String> customList = new ArrayList <String>();
-
-        for(int i = 0; i < dataList.size();i++) customList.add(dataList.get(i).getCountry());
-        
-        return customList;
-
-    }
-
-    public ArrayList<DataReader> getList(){
-        return dataList;
-    }
-
-    */
-
-
-    
-
-    ///////////////////////////////////////////////////
-
-    /**
-     * Search data set for country choice
-     * @param array - the datareader array 
-     * @param country - the name of the country
-     * @return the array list that contains the country  
-     */
-
-     /* 
-     public ArrayList<DataReader> countrySearch(DataReader[] array, String country){
-        String countryElement;
-
-        // Array list that holds all the data entries with the country choice
-        ArrayList<DataReader> tempCountry = new ArrayList<DataReader>(); 
-
-        // Check if the country in the array element is country of choice
-        for(int i = 0; i < array.length; i++){
-            countryElement = array[i].getCountry();	
-            
-            // Add to array list 
-            if(countryElement.equals(country)){
-                tempCountry.add(array[i]);
-            }
-        }
-        
-        // Return array list 
-        return tempCountry; 
-    }
-
-    */
-
-    /**
-    * Searchs the data set for year choice
-    * @param array - the datareader array 
-    * @param year - the name of the year
-    * @return the array list that contains the year    
-    */
-
-    /* 
-    public ArrayList<DataReader> yearSearch(DataReader[] array, int year){
-        int yearElement;
-
-        // Array list that holds all the data entries with the year choice
-        ArrayList<DataReader> tempYear = new ArrayList<DataReader>();
-
-        // Check if the labour type in the array element is labour type of choice
-        for (int i = 0; i < array.length; i++) {
-            yearElement = array[i].getYear();				
-            
-            // Add to array list 
-            if (yearElement == year) {
-                tempYear.add(array[i]);
-            }
-        }
-    
-        // Return array list 
-        return tempYear; 
-    }
-
-    */
-
 
 }
 
