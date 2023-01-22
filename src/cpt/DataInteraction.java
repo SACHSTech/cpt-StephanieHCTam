@@ -8,20 +8,20 @@ import java.util.*;
 
 public class DataInteraction {
 
-    private static ArrayList<DataReader> countryList = new ArrayList<DataReader>();
+    private static ArrayList<DataReader> dataList = new ArrayList<DataReader>();
 
     public void main(String[] args) throws IOException{
 
        // DataInteraction DataInteraction = new DataInteraction();
 
-        ArrayList <DataReader> countryList = new ArrayList <DataReader>();
+        ArrayList <DataReader> dataList = new ArrayList <DataReader>();
 
-        for(int i = 0; i<countryList.size();i++){
-            System.out.println(countryList.get(i).getCountry());
-            System.out.println(countryList.get(i).getYear());
-            System.out.println(countryList.get(i).getTuberculosis());
-            System.out.println(countryList.get(i).getWhoopingCough());
-            System.out.println(countryList.get(i).getMeningitis());
+        for(int i = 0; i<dataList.size();i++){
+            System.out.println(dataList.get(i).getCountry());
+            System.out.println(dataList.get(i).getYear());
+            System.out.println(dataList.get(i).getTuberculosis());
+            System.out.println(dataList.get(i).getWhoopingCough());
+            System.out.println(dataList.get(i).getMeningitis());
         }
     }
     
@@ -32,7 +32,7 @@ public class DataInteraction {
         while(str != null){
             String[] holder = str.split(",");
             DataReader country = new DataReader(holder[0], Integer.parseInt(holder[1]), Integer.parseInt(holder[2]), Integer.parseInt(holder[3]), Integer.parseInt(holder[4]));
-            countryList.add(country);
+            dataList.add(country);
             str = key.readLine();
         }
         key.close();
@@ -42,7 +42,7 @@ public class DataInteraction {
         
         ArrayList <String> customList = new ArrayList <String>();
 
-        for(int i = 0; i < countryList.size();i++) customList.add(countryList.get(i).getCountry());
+        for(int i = 0; i < dataList.size();i++) customList.add(dataList.get(i).getCountry());
         
         return customList;
 
@@ -52,15 +52,15 @@ public class DataInteraction {
 
         ArrayList <DataReader> customList = new ArrayList <DataReader>();
 
-        for(int i = 0; i < countryList.size();i++){
-            if(countryList.get(i).getYear() == year) customList.add(countryList.get(i));
+        for(int i = 0; i < dataList.size();i++){
+            if(dataList.get(i).getYear() == year) customList.add(dataList.get(i));
         }
         
         return customList;
     }
 
     public ArrayList<DataReader> getList(){
-        return countryList;
+        return dataList;
     }
 
 
