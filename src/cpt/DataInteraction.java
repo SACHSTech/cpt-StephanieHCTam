@@ -5,18 +5,21 @@ import java.util.ArrayList;
 import java.io.*;
 import java.io.IOException;
 import java.util.*;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class DataInteraction {
 
     private static ArrayList<DataReader> dataList = new ArrayList<DataReader>();
 
-    public void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException{
 
-       // DataInteraction DataInteraction = new DataInteraction();
+       DataInteraction DataInteraction = new DataInteraction();
 
-        ArrayList <DataReader> dataList = new ArrayList <DataReader>();
+       // ArrayList <DataReader> dataList = new ArrayList <DataReader>();
 
-        for(int i = 0; i<dataList.size();i++){
+        for(int i = 0; i<dataList.size(); i++){
             System.out.println(dataList.get(i).getCountry());
             System.out.println(dataList.get(i).getYear());
             System.out.println(dataList.get(i).getTuberculosis());
@@ -26,7 +29,8 @@ public class DataInteraction {
     }
     
     public DataInteraction() throws IOException{
-        BufferedReader key = new BufferedReader(new FileReader("Vaccine-preventable-diseases-deaths"));
+        BufferedReader key = new BufferedReader(new FileReader("Vaccine-preventable-diseases-deaths.csv"));
+
         String str = key.readLine();
 
         while(str != null){

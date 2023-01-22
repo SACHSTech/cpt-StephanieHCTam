@@ -15,6 +15,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.PieChart.Data;
 import javafx.stage.Stage;
 
 public class Charts extends Application {
@@ -23,46 +24,93 @@ public class Charts extends Application {
     private NumberAxis xAxis;
     private CategoryAxis yAxis;
 
-    public Parent createContent() {
+    public Parent createContent() throws IOException{
 
-        final String[] years = {"2010", "2012", "2014", "2016", "2018"};
-        final ObservableList<String> categories =
+        //final 
+        String[] years = {"2010", "2012", "2014", "2016", "2018"};
+
+        // Constructor
+        DataInteraction DataInteraction = new DataInteraction();
+
+        // Testing ArrayList
+        ArrayList<DataReader> listYear = new ArrayList<DataReader>();
+
+        ArrayList<DataReader> country1 = DataInteraction.countryName("Canada");
+
+
+        // years
+        //ArrayList<DataReader> year1 = DataInteraction.yearNum(2010);
+        //ArrayList<DataReader> year2 = DataInteraction.yearNum(2012);
+        //ArrayList<DataReader> year3 = DataInteraction.yearNum(2014);
+        //ArrayList<DataReader> year4 = DataInteraction.yearNum(2016);
+        //ArrayList<DataReader> year5 = DataInteraction.yearNum(2018);
+
+
+        //listYear = DataInteraction.yearNum();
+
+        //final ObservableList<String> categories =
             FXCollections.<String>observableArrayList(Arrays.asList(years));
         xAxis = new NumberAxis();
         yAxis = new CategoryAxis();
         chart = new BarChart<>(xAxis, yAxis);
         chart.setTitle("Vaccine Preventable Diseases Deaths");
         yAxis.setLabel("Year");
-        yAxis.setCategories(categories);
+        //yAxis.setCategories(categories);
         xAxis.setLabel("Deaths");
 
-        // add starting data
+
+        // series 1: Tuberculosis
         XYChart.Series<Number, String> series1 = new XYChart.Series<>();
         series1.setName("Tuberculosis");
+
+        for(int i = 0; i<country1.size(); i++){
+            series1.getData().add(
+            new XYChart.Data<Number, String>(country1.get(i).getTuberculosis(), Integer.toString(country1.get(i).getYear())));                
+        }
+
+        /*   
         series1.getData().addAll(
                 new XYChart.Data<Number, String>(567, years[0]),
                 new XYChart.Data<Number, String>(1292, years[1]),
                 new XYChart.Data<Number, String>(2180, years[2]),
                 new XYChart.Data<Number, String>(2180, years[3]),
                 new XYChart.Data<Number, String>(2180, years[4]));
+        */
 
         XYChart.Series<Number, String> series2 = new XYChart.Series<>();
         series2.setName("Whooping Cough");
+        
+            for(int i = 0; i<country1.size(); i++){
+                series2.getData().add(
+                new XYChart.Data<Number, String>(country1.get(i).getTuberculosis(), years[i]));                
+            }
+
+        /*
         series2.getData().addAll(
                 new XYChart.Data<Number, String>(956, years[0]),
                 new XYChart.Data<Number, String>(1665, years[1]),
                 new XYChart.Data<Number, String>(2450, years[2]),
                 new XYChart.Data<Number, String>(2180, years[3]),
                 new XYChart.Data<Number, String>(2180, years[4]));
+        */
 
         XYChart.Series<Number, String> series3 = new XYChart.Series<>();
         series3.setName("Meningitis");
+
+            for(int i = 0; i<country1.size(); i++){
+                series3.getData().add(
+                new XYChart.Data<Number, String>(country1.get(i).getTuberculosis(), years[i]));                
+            }
+
+        /*
         series3.getData().addAll(
                 new XYChart.Data<Number, String>(800, years[0]),
                 new XYChart.Data<Number, String>(1000, years[1]),
                 new XYChart.Data<Number, String>(2800, years[2]),
                 new XYChart.Data<Number, String>(2180, years[3]),
                 new XYChart.Data<Number, String>(2180, years[4]));
+
+        */
 
         chart.getData().add(series1);
         chart.getData().add(series2);

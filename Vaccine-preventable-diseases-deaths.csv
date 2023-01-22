@@ -1,4 +1,3 @@
-Countries,Year,Tuberculosis,Whooping cough,Meningitis
 Afghanistan,2010,4416,3832,2410
 Afghanistan,2012,4122,3468,2254
 Afghanistan,2014,3970,3701,1935
@@ -9,7 +8,7 @@ Albania,2012,11,2,13
 Albania,2014,11,3,13
 Albania,2016,11,3,14
 Albania,2018,11,3,13
-Algeria,2010,499,197,399
+Algeria,2010,499,197,399 
 Algeria,2012,489,245,390
 Algeria,2014,483,275,391
 Algeria,2016,468,285,304
