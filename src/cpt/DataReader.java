@@ -1,5 +1,9 @@
 package cpt;
 
+// Import statements
+//import javafx.beans.property.SimpleStringProperty;
+//import javafx.beans.property.StringProperty;
+
 public class DataReader {
 
     // Initialize instance variables

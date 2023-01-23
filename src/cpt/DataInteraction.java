@@ -71,6 +71,10 @@ public class DataInteraction {
 
     }
 
+    public ArrayList<DataReader> getList(){
+        return dataList;
+    }
+
 }
 
 
