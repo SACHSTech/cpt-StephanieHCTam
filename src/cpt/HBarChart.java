@@ -18,7 +18,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.chart.PieChart.Data;
 import javafx.stage.Stage;
 
-public class Charts extends Application {
+public class HBarChart extends Application {
 
     private BarChart<Number, String> chart;
     private NumberAxis xAxis;
