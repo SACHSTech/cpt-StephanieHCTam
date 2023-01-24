@@ -37,14 +37,14 @@ public class PieChartApp extends Application {
 */
     static String[] diseaseList = {"Tuberculosis", "Whooping Cough", "Meningitis"};
 
-    /*
+    /* 
     public static ObservableList<PieChart.Data> generateData() {
         for(int i = 0; i < diseaseList.length; i++){
                 //new PieChart.Data("Tuberculosis", 74),
                 //new PieChart.Data("Whooping Cough", 8),
-                new PieChart.Data(diseaseList.get(i), 2);
+                //new PieChart.Data(diseaseList.get(i), 2);
             }
-            return FXCollections.observableArrayList();
+        return FXCollections.observableArrayList();
     }
     */
 

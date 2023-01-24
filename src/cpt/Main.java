@@ -115,7 +115,8 @@ public class Main extends Application{
         
             for(int i = 0; i<country1.size(); i++){
                 series2.getData().add(
-                new XYChart.Data<Number, String>(country1.get(i).getWhoopingCough(), years[i]));                
+                new XYChart.Data<Number, String>(country1.get(i).getWhoopingCough(), years[i])); 
+                System.out.println(country1.get(i).getWhoopingCough());                
             }
 
         // series 3: Meningitis
@@ -124,7 +125,8 @@ public class Main extends Application{
 
             for(int i = 0; i<country1.size(); i++){
                 series3.getData().add(
-                new XYChart.Data<Number, String>(country1.get(i).getMeningitis(), years[i]));                
+                new XYChart.Data<Number, String>(country1.get(i).getMeningitis(), years[i]));  
+                System.out.println(country1.get(i).getMeningitis());              
             }
 
         barChart.getData().add(series1);
@@ -176,7 +178,7 @@ public class Main extends Application{
 
         });
 
-        VBox vboxBarChart = new VBox(5);
+        VBox vboxBarChart = new VBox(10);
         vboxBarChart.getChildren().addAll(cb, barChart);
         vboxBarChart.setPrefHeight(1000);
         vboxBarChart.setPrefWidth(1000);
