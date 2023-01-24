@@ -24,17 +24,29 @@ public class PieChartApp extends Application {
 
     private PieChart chart;
 
-    int totalDeaths;
-
+    private int totalDeaths;
 
     // chart title: Deaths Caused by Vaccine Preventable Diseases in the World
 
     // ArrayList<DataReader> country1 = DataInteraction.countryName("Canada");
 
-
+/* 
     for (int i = 0, i < 10; i++){
         public static ObservableList<PieChart.Data> generateData = FXCollections.observableArrayList(newPieChart.Data());
     }
+*/
+    static String[] diseaseList = {"Tuberculosis", "Whooping Cough", "Meningitis"};
+
+    /*
+    public static ObservableList<PieChart.Data> generateData() {
+        for(int i = 0; i < diseaseList.length; i++){
+                //new PieChart.Data("Tuberculosis", 74),
+                //new PieChart.Data("Whooping Cough", 8),
+                new PieChart.Data(diseaseList.get(i), 2);
+            }
+            return FXCollections.observableArrayList();
+    }
+    */
 
     public static ObservableList<PieChart.Data> generateData() {
         return FXCollections.observableArrayList(
@@ -43,7 +55,7 @@ public class PieChartApp extends Application {
                 new PieChart.Data("Meningitis", 2));
     }
 
-    public Parent createContent() {
+    public Parent PieChart() throws IOException{
         chart = new PieChart(generateData());
         chart.setClockwise(false);
         return chart;
@@ -67,7 +79,7 @@ public class PieChartApp extends Application {
 
 
     @Override public void start(Stage primaryStage) throws IOException {
-        primaryStage.setScene(new Scene(createContent()));
+        primaryStage.setScene(new Scene(PieChart()));
         primaryStage.show();
 
         /* 
@@ -92,6 +104,7 @@ public class PieChartApp extends Application {
         launch(args);
     }
 
+    /* 
 
     private static double normalizeAngle(double angle) {
         double a = angle % 360;
@@ -103,6 +116,7 @@ public class PieChartApp extends Application {
         }
         return a;
     }
+    */
 
 
 }
