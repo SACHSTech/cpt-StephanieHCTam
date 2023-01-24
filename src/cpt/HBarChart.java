@@ -41,7 +41,6 @@ public class HBarChart extends Application {
 
     public Parent createContent() throws IOException{
 
-        //final 
         String[] years = {"2010", "2012", "2014", "2016", "2018"};
 
         // Constructor
@@ -67,8 +66,6 @@ public class HBarChart extends Application {
         cb.getItems().add("Turkey");
         cb.getItems().add("United States");
         cb.getItems().add("Zambia");
-
-        // set default cb choice
 
         country1 = DataInteraction.countryName(String.valueOf(cb.getValue()));
 
@@ -170,12 +167,12 @@ public class HBarChart extends Application {
             //chart.getData().add(series3);
             //return chart;
 
-           
-
         });
+
         VBox vboxBarChart = new VBox(5);
         vboxBarChart.getChildren().addAll(cb, chart);
-
+        vboxBarChart.setPrefHeight(1000);
+        vboxBarChart.setPrefWidth(1000);
         return vboxBarChart;
     }
 
