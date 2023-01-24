@@ -3,53 +3,65 @@ package cpt;
 public class TotalReader {
 
     // Initialize instance variables
-    private int totalTuberculosis;
-    private int totalCough;
-    private int totalMeningitis;
+    private int total2010;
+    private int total2012;
+    private int total2014;
+    private int total2016;
+    private int total2018;
 
     /**
      * Constructor - creates a new data instance
-     * @param hitotalTuberculosis - total deaths by tuberculosis
-     * @param hitotalCough - total deaths by whooping cough
-     * @param hitotalMeningitis - total deaths by meningitis
+     * @param hitotal2010 - total deaths by tuberculosis
+     * @param hitotal2012 - total deaths by whooping cough
+     * @param hitotal2014 - total deaths by meningitis
      */
 
-    public TotalReader(int hitotalTuberculosis, int hitotalCough, int hitotalMeningitis){
-        this.totalTuberculosis = hitotalTuberculosis;
-        this.totalCough = hitotalCough;
-        this.totalMeningitis = hitotalMeningitis;
+    public TotalReader(int hitotal2010, int hitotal2012, int hitotal2014, int hitotal2016, int hitotal2018){
+        this.total2010 = hitotal2010;
+        this.total2012 = hitotal2012;
+        this.total2014 = hitotal2014;
+        this.total2016 = hitotal2016;
+        this.total2018 = hitotal2018;
     }
 
     /**
      * Getter method for meningitis
      * @return meningitis deaths
      */
-    public int getTotalTuberculosis(){
-        return totalTuberculosis;
+    public int getTotal2010(){
+        return total2010;
     }
 
     /**
      * Getter method for meningitis
      * @return meningitis deaths
      */
-    public int getTotalCough(){
-        return totalCough;
+    public int getTotal2012(){
+        return total2012;
     }
 
     /**
      * Getter method for meningitis
      * @return meningitis deaths
      */
-    public int getTotalMeningitis(){
-        return totalMeningitis;
+    public int getTotal2014(){
+        return total2014;
     }
 
     /**
-    * String representation of a set of data 
-    * @return all the attributes related to one set of data 
-    */
-    public String toString(){
-        return totalTuberculosis + ", " + totalCough + ", " + totalMeningitis;
+     * Getter method for meningitis
+     * @return meningitis deaths
+     */
+    public int getTotal2016(){
+        return total2016;
+    }
+
+    /**
+     * Getter method for meningitis
+     * @return meningitis deaths
+     */
+    public int getTotal2018(){
+        return total2018;
     }
     
 }

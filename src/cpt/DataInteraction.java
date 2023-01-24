@@ -79,6 +79,10 @@ public class DataInteraction {
         return dataList.get(i);
     }
 
+    public int getDeathTB(){
+        
+    }
+
 }
 
 
