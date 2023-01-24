@@ -28,7 +28,7 @@ public class DataInteraction {
     }
     
     public DataInteraction() throws IOException{
-        BufferedReader key = new BufferedReader(new FileReader("Vaccine-preventable-diseases-deaths.csv"));
+        BufferedReader key = new BufferedReader(new FileReader("src/Vaccine-preventable-diseases-deaths.csv"));
 
         String str = key.readLine();
 
@@ -73,6 +73,10 @@ public class DataInteraction {
 
     public ArrayList<DataReader> getList(){
         return dataList;
+    }
+
+    public DataReader getData(int i) {
+        return dataList.get(i);
     }
 
 }
