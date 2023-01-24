@@ -12,9 +12,6 @@ public class DataReader {
     private int tuberculosis;
     private int whoopingCough;
     private int meningitis;
-    private int totalTuberculosis;
-    private int totalCough;
-    private int totalMeningitis;
 
     /**
      * Constructor - creates a new data instance
@@ -31,9 +28,6 @@ public class DataReader {
         this.tuberculosis = hituberculosis;
         this.whoopingCough = hiwhoopingCough;
         this.meningitis = himeningitis;
-        this.totalTuberculosis = hitotalTuberculosis;
-        this.totalCough = hitotalCough;
-        this.totalMeningitis = hitotalMeningitis;
     }
 
     /**
@@ -74,30 +68,6 @@ public class DataReader {
      */
     public int getMeningitis(){
         return meningitis;
-    }
-
-    /**
-     * Getter method for meningitis
-     * @return meningitis deaths
-     */
-    public int getTotalTuberculosis(){
-        return totalTuberculosis;
-    }
-
-    /**
-     * Getter method for meningitis
-     * @return meningitis deaths
-     */
-    public int getTotalCough(){
-        return totalCough;
-    }
-
-    /**
-     * Getter method for meningitis
-     * @return meningitis deaths
-     */
-    public int getTotalMeningitis(){
-        return totalMeningitis;
     }
 
     /**
