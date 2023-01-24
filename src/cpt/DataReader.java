@@ -22,7 +22,7 @@ public class DataReader {
      * @param himeningitis - deaths by meningitis
      */
 
-    public DataReader(String hicountry, int hiyear, int hituberculosis, int hiwhoopingCough, int himeningitis, int hitotalTuberculosis, int hitotalCough, int hitotalMeningitis){
+    public DataReader(String hicountry, int hiyear, int hituberculosis, int hiwhoopingCough, int himeningitis){
         this.country = hicountry;
         this.year = hiyear;
         this.tuberculosis = hituberculosis;
