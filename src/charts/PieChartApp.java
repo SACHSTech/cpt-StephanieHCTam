@@ -13,6 +13,12 @@ import cpt.DataReader;
 import java.util.*;
 import java.io.*;
 
+/**
+ * Pie Chart testing
+ * @author S. Tam
+ * 
+ */
+
 public class PieChartApp extends Application {
 
     private PieChart chart;
@@ -58,6 +64,11 @@ public class PieChartApp extends Application {
     }
     */
 
+    /**
+     * Creates pie chart
+     * @return Returns pie chart
+     * @throws IOException
+     */
     public Parent PieChart() throws IOException{
         chart = new PieChart(generateData());
         chart.setClockwise(false);

@@ -4,12 +4,16 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.io.*;
 import java.io.IOException;
-import java.util.*;
-import java.io.File;
-import java.io.FileNotFoundException;
+
+/**
+ * Data Interaction and Visualization CPT 
+ * @author S. Tam
+ * 
+ */
 
 public class DataInteraction {
 
+    // New array list 
     private static ArrayList<DataReader> dataList = new ArrayList<DataReader>();
 
     /* 
@@ -29,6 +33,10 @@ public class DataInteraction {
     }
     */
     
+    /**
+     * Method that reads CSV file and creates data as new object, adds to an array list 
+     * @throws IOException
+     */
     public DataInteraction() throws IOException{
         BufferedReader key = new BufferedReader(new FileReader("src/Vaccine-preventable-diseases-deaths.csv"));
 
@@ -50,6 +58,11 @@ public class DataInteraction {
     // method take in country name, do: compare the orig dataList, loop: if the dataList at i the name of country then add it to different array, define it to that array
 
 
+    /**
+     * Method that extracts the name of the country and puts it into a new array list 
+     * @param country
+     * @return Return an array list that only includes the countries names 
+     */
     public ArrayList<DataReader> countryName(String country){
 
         ArrayList <DataReader> newList = new ArrayList <DataReader>();
@@ -57,10 +70,15 @@ public class DataInteraction {
         for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals(country)) newList.add(dataList.get(i));
         }
-        
+
         return newList;
     }
 
+    /**
+     * Method that extracts the year and puts it into a new array list
+     * @param year
+     * @return Return an array list that only includes years 
+     */
     public ArrayList<DataReader> yearNum(int year){
         
         ArrayList <DataReader> newList = new ArrayList <DataReader>();
@@ -73,18 +91,7 @@ public class DataInteraction {
 
     }
 
-    public ArrayList<DataReader> getList(){
-        return dataList;
-    }
-
-    public DataReader getData(int i) {
-        return dataList.get(i);
-    }
-
-
-
     // Methods for Total Tuberculosis
-
     public int getTotalt2010(){
         for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
@@ -104,7 +111,6 @@ public class DataInteraction {
     }
 
     // Methods for Total Whooping Cough
-
     public int getTotalc2010(){
         for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
@@ -124,7 +130,6 @@ public class DataInteraction {
     }
 
     // Methods for Total Meningitis
-
     public int getTotalm2010(){
         for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){

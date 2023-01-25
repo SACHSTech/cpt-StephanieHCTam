@@ -10,25 +10,26 @@ import java.util.Arrays;
 import cpt.DataInteraction;
 import cpt.DataReader;
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
-import javafx.scene.chart.PieChart.Data;
 import javafx.stage.Stage;
 
 // choiceBox imports
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.TilePane;
 
 // VBox imports
 import javafx.scene.layout.VBox;
-import javafx.geometry.Insets;
+
+/**
+ * Horizontal Bar Chart testing
+ * @author S. Tam
+ * 
+ */
 
 
 public class HBarChart extends Application {
@@ -42,6 +43,13 @@ public class HBarChart extends Application {
     private ArrayList<DataReader> country1;
 
 
+    /**
+     * Creates a horizontal bar chart based off the data 
+     * @return Returns the horizontal bar chart
+     * @throws IOException
+     * @author S. Tam
+     * 
+     */
     public Parent createContent() throws IOException{
 
         String[] years = {"2010", "2012", "2014", "2016", "2018"};
@@ -172,6 +180,7 @@ public class HBarChart extends Application {
 
         });
 
+        // VBox layout
         VBox vboxBarChart = new VBox(5);
         vboxBarChart.getChildren().addAll(cb, chart);
         vboxBarChart.setPrefHeight(1000);

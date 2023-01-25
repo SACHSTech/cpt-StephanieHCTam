@@ -1,8 +1,9 @@
 package cpt;
 
-// Import statements
-//import javafx.beans.property.SimpleStringProperty;
-//import javafx.beans.property.StringProperty;
+/**
+ * Data Interaction and Visualization CPT 
+ * @author S. Tam
+ */
 
 public class DataReader {
 
@@ -14,14 +15,14 @@ public class DataReader {
     private int meningitis;
 
     /**
-     * Constructor - creates a new data instance
-     * @param hicountry - country name
-     * @param hiyear - chosen year
-     * @param hituberculosis - deaths by tuberculosis
-     * @param hiwhoopingCough - deaths by whooping cough
-     * @param himeningitis - deaths by meningitis
+     * Constructor creates a new data instance
+     * @param hicountry country name
+     * @param hiyear chosen year
+     * @param hituberculosis deaths by tuberculosis
+     * @param hiwhoopingCough deaths by whooping cough
+     * @param himeningitis deaths by meningitis
+     * 
      */
-
     public DataReader(String hicountry, int hiyear, int hituberculosis, int hiwhoopingCough, int himeningitis){
         this.country = hicountry;
         this.year = hiyear;
