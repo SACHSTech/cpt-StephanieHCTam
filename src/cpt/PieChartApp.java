@@ -24,18 +24,22 @@ public class PieChartApp extends Application {
 
     private PieChart chart;
 
+    private int total2010 = 1843955;
+    private int total2012 = 1763350;
+    private int total2014 = 1715556;
+    private int total2016 = 1645107;
+    private int total2018 = 1569292;
+
     private int totalDeaths;
 
     // chart title: Deaths Caused by Vaccine Preventable Diseases in the World
-
-    // ArrayList<DataReader> country1 = DataInteraction.countryName("Canada");
 
 /* 
     for (int i = 0, i < 10; i++){
         public static ObservableList<PieChart.Data> generateData = FXCollections.observableArrayList(newPieChart.Data());
     }
 */
-    static String[] diseaseList = {"Tuberculosis", "Whooping Cough", "Meningitis"};
+    // static String[] diseaseList = {"Tuberculosis", "Whooping Cough", "Meningitis"};
 
     /* 
     public static ObservableList<PieChart.Data> generateData() {
@@ -50,7 +54,7 @@ public class PieChartApp extends Application {
 
     public static ObservableList<PieChart.Data> generateData() {
         return FXCollections.observableArrayList(
-                new PieChart.Data("Tuberculosis", 74),
+                new PieChart.Data("Tuberculosis", dataInteraction.getTotalt2010()),
                 new PieChart.Data("Whooping Cough", 8),
                 new PieChart.Data("Meningitis", 2));
     }
@@ -79,6 +83,12 @@ public class PieChartApp extends Application {
 
 
     @Override public void start(Stage primaryStage) throws IOException {
+
+        // Constructor
+        DataInteraction dataInteraction = new DataInteraction();
+
+        ArrayList<DataReader> country2 = dataInteraction.countryName("World");
+
         primaryStage.setScene(new Scene(PieChart()));
         primaryStage.show();
 
@@ -103,20 +113,5 @@ public class PieChartApp extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
-    /* 
-
-    private static double normalizeAngle(double angle) {
-        double a = angle % 360;
-        if (a <= -180) {
-            a += 360;
-        }
-        if (a > 180) {
-            a -= 360;
-        }
-        return a;
-    }
-    */
-
 
 }
