@@ -12,9 +12,10 @@ public class DataInteraction {
 
     private static ArrayList<DataReader> dataList = new ArrayList<DataReader>();
 
+    /* 
     public static void main(String[] args) throws IOException{
 
-       DataInteraction DataInteraction = new DataInteraction();
+       DataInteraction dataInteraction = new DataInteraction();
 
        // ArrayList <DataReader> dataList = new ArrayList <DataReader>();
 
@@ -26,6 +27,7 @@ public class DataInteraction {
             System.out.println(dataList.get(i).getMeningitis());
         }
     }
+    */
     
     public DataInteraction() throws IOException{
         BufferedReader key = new BufferedReader(new FileReader("src/Vaccine-preventable-diseases-deaths.csv"));
@@ -79,8 +81,49 @@ public class DataInteraction {
         return dataList.get(i);
     }
 
-    public int getDeathTB(){
-        
+    public int getTotalt2010(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
+                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalt2012(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2012){
+                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalt2014(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2014){
+                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalt2016(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2016){
+                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalt2018(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2018){
+                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
     }
 
 }
