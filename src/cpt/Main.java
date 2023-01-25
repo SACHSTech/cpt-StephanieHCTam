@@ -22,29 +22,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.geometry.Side;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.chart.ScatterChart;
-
-import javafx.application.Application;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
-
 
 // Pie Chart imports
 import javafx.scene.chart.PieChart;
 
 // choiceBox imports
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.layout.TilePane;
 
-// VBox imports
-import javafx.scene.layout.VBox;
-import javafx.geometry.Insets;
 
 public class Main extends Application{
 
@@ -64,29 +48,40 @@ public class Main extends Application{
     Button PCbutton;
 
     // Button booleans
-    //boolean PCselected2010 = true;
-    //boolean PCselected2018 = false;
+    static boolean PCselected2010 = false;
+    static boolean PCselected2018 = false;
 
     // Variables for pie chart
     private PieChart pieChart;
 
+    //DataInteraction = dataInteraction;
+
     /* 
     int total2010 = 1843955;
-    int total2012 = 1763350;
-    int total2014 = 1715556;
-    int total2016 = 1645107;
     int total2018 = 1569292;
     */
 
-    //DataInteraction = dataInteraction;
-
     // Data for Pie Chart
-    public static ObservableList<PieChart.Data> generateData() {
-        return FXCollections.observableArrayList(
+        public static ObservableList<PieChart.Data> generateData() {
+            if (PCselected2010 = true){
+                return FXCollections.observableArrayList(
                 new PieChart.Data("Tuberculosis", 74),
                 new PieChart.Data("Whooping Cough", 8),
-                new PieChart.Data("Meningitis", 2));
-    }
+                new PieChart.Data("Meningitis", 18));
+            }
+            else if (PCselected2010 = true){
+                return FXCollections.observableArrayList(
+                    new PieChart.Data("Tuberculosis", 77),
+                    new PieChart.Data("Whooping Cough", 8),
+                    new PieChart.Data("Meningitis", 15));
+            }
+            else {
+                return FXCollections.observableArrayList(
+                    new PieChart.Data("Tuberculosis", 0),
+                    new PieChart.Data("Whooping Cough", 0),
+                    new PieChart.Data("Meningitis", 0));
+            }
+        }
 
     public Parent HorizontalBarChart() throws IOException{
 
@@ -212,16 +207,6 @@ public class Main extends Application{
     }
     
         public Parent PieChart() throws IOException{
-
-            /* 
-            // Data for Pie Chart
-            public static ObservableList<PieChart.Data> generateData() {
-                return FXCollections.observableArrayList(
-                        //new PieChart.Data("Tuberculosis", dataInteraction.getTotalt2010()),
-                        new PieChart.Data("Whooping Cough", 8),
-                        new PieChart.Data("Meningitis", 2));
-            }
-            */
             
             pieChart = new PieChart(generateData());
             pieChart.setClockwise(false);
@@ -241,6 +226,16 @@ public class Main extends Application{
         //Border pane
         BorderPane root = new BorderPane();
 
+        // Radio buttons for scatter graph
+        RadioButton PCbox2010 = new RadioButton("2010");
+        RadioButton PCbox2018 = new RadioButton("2018");
+
+        // Enter button for pie chart
+        PCbutton = new Button("Enter");
+
+        // Handle controls for radio buttons (pie chart)
+        PCbutton.setOnAction(e -> handleOptionSG(PCbox2010, PCbox2018));
+
         // Tabs set up
         tabPane = new TabPane();
         tabPane.setSide(Side.TOP);
@@ -259,21 +254,11 @@ public class Main extends Application{
         tab2.setClosable(false);
         VBox layout2 = new VBox(10);
         layout2.setPadding(new Insets(10)); 
-        layout2.getChildren().addAll(tabPane, PieChart());
+        layout2.getChildren().addAll(tabPane, PCbox2010, PCbox2018, PCbutton, PieChart());
         tab2.setContent(layout2);
         tabPane.getTabs().add(tab2);
 
         root.setCenter(tabPane);
-
-        // Enter button for pie chart
-        //PCbutton = new Button("Enter");
-
-        // Handle controls for radio buttons (pie chart)
-        //PCbutton.setOnAction(e -> handleOptionSG(PCbox2010, PCbox2018));
-
-        // Radio buttons for scatter graph
-        //RadioButton PCbox2010 = new RadioButton("2010");
-        //RadioButton PCbox2018 = new RadioButton("2018");
 
         // Set screen
         Scene screen = new Scene(root); 
@@ -286,6 +271,20 @@ public class Main extends Application{
         // Pie chart title
         pieChart.setTitle("Deaths Caused by Vaccine Preventable Diseases in the World");
 
+    }
+
+    public void handleOptionSG(RadioButton PCbox2010, RadioButton PCbox2018){
+        if(PCselected2010 == false && PCbox2010.isSelected()){
+            PCselected2010 = true;
+        }else if(!PCbox2010.isSelected()){
+            PCselected2010 = false;
+        }
+
+        if(PCselected2018 == false && PCbox2018.isSelected()){
+            PCselected2018 = true;
+        }else if (!PCbox2018.isSelected()){
+            PCselected2018 = false;
+        }
     }
 
     /**
