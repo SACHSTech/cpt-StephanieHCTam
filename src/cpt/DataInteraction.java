@@ -81,36 +81,11 @@ public class DataInteraction {
         return dataList.get(i);
     }
 
+
+
     public int getTotalt2010(){
         for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
-                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
-            }
-        }
-        return -1;
-    }
-
-    public int getTotalt2012(){
-        for(int i = 0; i < dataList.size(); i++){
-            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2012){
-                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
-            }
-        }
-        return -1;
-    }
-
-    public int getTotalt2014(){
-        for(int i = 0; i < dataList.size(); i++){
-            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2014){
-                return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
-            }
-        }
-        return -1;
-    }
-
-    public int getTotalt2016(){
-        for(int i = 0; i < dataList.size(); i++){
-            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2016){
                 return dataList.get(i).getTuberculosis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
             }
         }
@@ -125,7 +100,4 @@ public class DataInteraction {
         }
         return -1;
     }
-
 }
-
-
