@@ -24,6 +24,17 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.chart.ScatterChart;
 
+import javafx.application.Application;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+
 // Pie Chart imports
 import javafx.scene.chart.PieChart;
 
@@ -49,9 +60,25 @@ public class Main extends Application{
     // Variable for tab pane 
     TabPane tabPane;
 
+    // Radio button
+    Button PCbutton;
+
+    // Button booleans
+    //boolean PCselected2010 = true;
+    //boolean PCselected2018 = false;
+
     // Variables for pie chart
     private PieChart pieChart;
 
+    /* 
+    int total2010 = 1843955;
+    int total2012 = 1763350;
+    int total2014 = 1715556;
+    int total2016 = 1645107;
+    int total2018 = 1569292;
+    */
+
+    //DataInteraction = dataInteraction;
 
     // Data for Pie Chart
     public static ObservableList<PieChart.Data> generateData() {
@@ -61,13 +88,12 @@ public class Main extends Application{
                 new PieChart.Data("Meningitis", 2));
     }
 
-
     public Parent HorizontalBarChart() throws IOException{
 
         String[] years = {"2010", "2012", "2014", "2016", "2018"};
 
         // Constructor
-        DataInteraction DataInteraction = new DataInteraction();
+        DataInteraction dataInteraction = new DataInteraction();
 
         // Testing ArrayList
         //ArrayList<DataReader> listYear = new ArrayList<DataReader>();
@@ -90,7 +116,7 @@ public class Main extends Application{
         cb.getItems().add("United States");
         cb.getItems().add("Zambia");
 
-        country1 = DataInteraction.countryName(String.valueOf(cb.getValue()));
+        country1 = dataInteraction.countryName(String.valueOf(cb.getValue()));
 
         FXCollections.<String>observableArrayList(Arrays.asList(years));
         xAxis = new NumberAxis();
@@ -143,7 +169,7 @@ public class Main extends Application{
             // check country in "cb"
             System.out.println(String.valueOf(cb.getValue()));
 
-            country1 = DataInteraction.countryName(String.valueOf(cb.getValue()));
+            country1 = dataInteraction.countryName(String.valueOf(cb.getValue()));
 
             FXCollections.<String>observableArrayList(Arrays.asList(years));
             xAxis = new NumberAxis();
@@ -165,7 +191,7 @@ public class Main extends Application{
             
                 for(int i = 0; i<country1.size(); i++){
                     series2.getData().add(
-                    new XYChart.Data<Number, String>(country1.get(i).getWhoopingCough(), years[i]));                
+                    new XYChart.Data<Number, String>(country1.get(i).getWhoopingCough(), Integer.toString(country1.get(i).getYear())));                
                 }
 
             // series 3: Meningitis
@@ -173,7 +199,7 @@ public class Main extends Application{
 
                 for(int i = 0; i<country1.size(); i++){
                     series3.getData().add(
-                    new XYChart.Data<Number, String>(country1.get(i).getMeningitis(), years[i]));                
+                    new XYChart.Data<Number, String>(country1.get(i).getMeningitis(), Integer.toString(country1.get(i).getYear())));                
                 }
 
         });
@@ -186,6 +212,16 @@ public class Main extends Application{
     }
     
         public Parent PieChart() throws IOException{
+
+            /* 
+            // Data for Pie Chart
+            public static ObservableList<PieChart.Data> generateData() {
+                return FXCollections.observableArrayList(
+                        //new PieChart.Data("Tuberculosis", dataInteraction.getTotalt2010()),
+                        new PieChart.Data("Whooping Cough", 8),
+                        new PieChart.Data("Meningitis", 2));
+            }
+            */
             
             pieChart = new PieChart(generateData());
             pieChart.setClockwise(false);
@@ -195,6 +231,7 @@ public class Main extends Application{
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+
         primaryStage.setScene(new Scene(HorizontalBarChart()));
         primaryStage.show();
 
@@ -207,7 +244,6 @@ public class Main extends Application{
         // Tabs set up
         tabPane = new TabPane();
         tabPane.setSide(Side.TOP);
-
 
         // Tab 1
         Tab tab1 = new Tab("Chart #1 (Horizontal Bar Chart)");
@@ -229,6 +265,16 @@ public class Main extends Application{
 
         root.setCenter(tabPane);
 
+        // Enter button for pie chart
+        //PCbutton = new Button("Enter");
+
+        // Handle controls for radio buttons (pie chart)
+        //PCbutton.setOnAction(e -> handleOptionSG(PCbox2010, PCbox2018));
+
+        // Radio buttons for scatter graph
+        //RadioButton PCbox2010 = new RadioButton("2010");
+        //RadioButton PCbox2018 = new RadioButton("2018");
+
         // Set screen
         Scene screen = new Scene(root); 
         primaryStage.setTitle("ICS4U Data Modelling and Visualization - Stephanie Tam");
@@ -236,6 +282,9 @@ public class Main extends Application{
         primaryStage.setWidth(1000);
         primaryStage.setHeight(1000);
         primaryStage.show();
+
+        // Pie chart title
+        pieChart.setTitle("Deaths Caused by Vaccine Preventable Diseases in the World");
 
     }
 
@@ -246,6 +295,5 @@ public class Main extends Application{
     public static void main(String[] args) {
         launch(args);
     }
-
 
 }
