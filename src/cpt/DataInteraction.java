@@ -83,6 +83,8 @@ public class DataInteraction {
 
 
 
+    // Methods for Total Tuberculosis
+
     public int getTotalt2010(){
         for(int i = 0; i < dataList.size(); i++){
             if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
@@ -100,4 +102,45 @@ public class DataInteraction {
         }
         return -1;
     }
+
+    // Methods for Total Whooping Cough
+
+    public int getTotalc2010(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
+                return dataList.get(i).getWhoopingCough() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalc2018(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2018){
+                return dataList.get(i).getWhoopingCough() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    // Methods for Total Meningitis
+
+    public int getTotalm2010(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2010){
+                return dataList.get(i).getMeningitis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
+    public int getTotalm2018(){
+        for(int i = 0; i < dataList.size(); i++){
+            if(dataList.get(i).getCountry().equals("World") && dataList.get(i).getYear() == 2018){
+                return dataList.get(i).getMeningitis() / (dataList.get(i).getMeningitis() + dataList.get(i).getTuberculosis() + dataList.get(i).getWhoopingCough()) * 100;
+            }
+        }
+        return -1;
+    }
+
 }
