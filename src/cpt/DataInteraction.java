@@ -35,6 +35,7 @@ public class DataInteraction {
     
     /**
      * Method that reads CSV file and creates data as new object, adds to an array list 
+     * File Input/Output 
      * @throws IOException
      */
     public DataInteraction() throws IOException{
