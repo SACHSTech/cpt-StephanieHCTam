@@ -52,13 +52,6 @@ public class DataInteraction {
         key.close();
     }
 
-
-    // take country list, compare dataList 
-    // create a method that compares everything single object in dataList in that object, if the same create other 
-
-    // method take in country name, do: compare the orig dataList, loop: if the dataList at i the name of country then add it to different array, define it to that array
-
-
     /**
      * Method that extracts the name of the country and puts it into a new array list 
      * @param country

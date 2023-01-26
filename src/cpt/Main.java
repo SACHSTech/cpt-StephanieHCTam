@@ -254,7 +254,7 @@ public class Main extends Application{
         //Border pane
         BorderPane root = new BorderPane();
 
-        // Radio buttons for scatter graph
+        // Radio buttons for pie chart
         RadioButton PCbox2010 = new RadioButton("2010");
         RadioButton PCbox2018 = new RadioButton("2018");
 
@@ -262,7 +262,7 @@ public class Main extends Application{
         PCbutton = new Button("Enter");
 
         // Handle controls for radio buttons (pie chart)
-        PCbutton.setOnAction(e -> handleOptionSG(PCbox2010, PCbox2018));
+        PCbutton.setOnAction(e -> handleOptionPC(PCbox2010, PCbox2018));
 
         // Tabs set up
         tabPane = new TabPane();
@@ -308,7 +308,7 @@ public class Main extends Application{
      * @author S. Tam
      * 
      */
-    public void handleOptionSG(RadioButton PCbox2010, RadioButton PCbox2018){
+    public void handleOptionPC(RadioButton PCbox2010, RadioButton PCbox2018){
         if(PCselected2010 == false && PCbox2010.isSelected()){
             PCselected2010 = true;
         }else if(!PCbox2010.isSelected()){
