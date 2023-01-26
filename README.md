@@ -8,7 +8,8 @@ I selected this dataset because the topic of vaccination is very relevant–espe
 ### Data Source: 
 https://ourworldindata.org/grapher/deaths-caused-by-vaccine-preventable-diseases-over-time 
 
-### Course Connection Video:
+### Course Connections Video:
+https://drive.google.com/file/d/11M8eKQpX7hemsf8tyU0IRzbgv53nIIBI/view?usp=sharing 
 
 ### Demo Video:
 https://drive.google.com/file/d/1p4L4eepGMOp9Z6yWi_UDucJpIpoF0kUt/view?usp=sharing 
